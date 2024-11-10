@@ -6,6 +6,10 @@ require('dotenv').config();
 
 const app = express();
 
+app.get('/', (req, res) => {
+  res.send('Welcome to MERN Blog');
+});
+
 // Middleware
 app.use(express.json());
 
