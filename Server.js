@@ -3,8 +3,13 @@ const mongoose = require('mongoose');
 const authRoutes = require('./Routes/AuthRoutes');
 const blogRoutes = require('./Routes/BlogRoutes'); 
 require('dotenv').config();
+const cors = require('cors');
 
 const app = express();
+
+app.use(cors({
+  origin: '*', 
+}));
 
 app.get('/', (req, res) => {
   res.send('Welcome to MERN Blog');
